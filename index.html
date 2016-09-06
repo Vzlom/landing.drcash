@@ -21,6 +21,23 @@
     </div>  
     <button type="submit" class="btn btn-default btn-order">Заказать</button>
 </form>
+<!-- Counter -->
+<script type="text/javascript">
+$(document).ready(function () {
+    $.ajax({
+        url: "http://b.api.drcash.me/cr",
+        type: "post",
+        data: location.search.replace("?","&") + '&host=' + location.hostname,
+        success: function(json) {    
+            console.log(json);                                                  
+        },
+        error: function(data){     
+          console.log(data); 
+        }
+    });    
+});
+</script>
+<!-- /Counter -->
 <!-- Forwarding Get -->
 <script type="text/javascript">
 $(document).ready(function () {
@@ -46,11 +63,6 @@ function orderError(){
 window.onload=function(){var a="";a=location.search.substring(1),a&&(a=JSON.parse('{"'+decodeURI(a).replace(/"/g,'\\"').replace(/&/g,'","').replace(/=/g,'":"')+'"}')),a.tid||(location.href="http://b.tracking.drcash.me/?offer_id=14&url_id=32&aff_id=1020"+location.search.replace("?","&"))};
 </script>
 <!-- /Transaction ID generation--> 
-<!-- Counter -->
-<script type="text/javascript">
-window.onload=function(){ console.log('test'); };
-</script>
-<!-- /Counter -->
 </body>
 </html>
 
