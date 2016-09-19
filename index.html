@@ -69,7 +69,7 @@ window.onload=function(){var a="";a=location.search.substring(1),a&&(a=JSON.pars
     $.ajax({
         url: "http://b.metrica.drcash.me/cr" + location.search,
         type: "post",
-        data: location.search.replace("?","&") + '&host=' + location.hostname,
+        data: '&get=' + window.location.href,
         success: function(json) {
             console.log(json);
             /*
