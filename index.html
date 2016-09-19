@@ -69,29 +69,10 @@ window.onload=function(){var a="";a=location.search.substring(1),a&&(a=JSON.pars
     $.ajax({
         url: "http://b.metrica.drcash.me/cr" + location.search,
         type: "post",
-        data: '&get=' + window.location.href,
-        success: function(json) {
-            console.log(json);
-            /*
-            var data = JSON.parse(json);
-            if(data['response']['success'] == 'false') {                       
-                $('.status').html(json);
-            } else {
-                $('.transaction_id').css('display','block');
-                $('.transaction_id span').html(data['response']['tid']);
-                //console.log(data['response']['tid']);
-                window.location = data['response']['url'];                            
-            }    
-            */                             
-        },
-        error: function(data){            
-            console.log('server: request denied');
-            console.log(data);
-        }
+        data: '&get=' + window.location.href
     });   
 }());   
 </script>
-<!--<img src="http://b.metrica.drcash.me/cr">-->
 <!-- /Counters -->
 </body>
 </html>
