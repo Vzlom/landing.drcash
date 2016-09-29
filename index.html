@@ -10,7 +10,7 @@
     <button type="submit">Заказать</button>
     <a style="display:block" href="./second.html">Go to second page</a><br>
 </form>
-<script type="text/javascript">function orderSuccess(a){console.log(a['conversions']);window.location="./thanks.html"+enURL(a['conversions'][0]);} function orderError(a){console.log(a)} window.onload = function() { forwarding(); order(); autotid('http://b.tracking.drcash.me/?offer_id=14&url_id=32&aff_id=1020'); } </script>
+<script type="text/javascript">function orderSuccess(a){console.log(a['conversions']);window.location="./thanks.html"+enURL(a['conversions'][0]);} function orderError(a){console.log(a)} window.onload = function() { forwarding(); order(); autotid('http://b.tracking.drcash.me/?offer_id=14&url_id=32&aff_id=1020'); metrica(location.search.replace("?","&") + '&host=' + location.hostname); } </script>
 <!-- Internal --><script src="http://b.cdn.drcash.me/built/assets/js/b.sf.min.js"></script><!-- /Internal -->
 </body>
 </html>
