@@ -2,67 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
-<script src="http://b.cdn.drcash.me/built/assets/js/validate.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://b.cdn.drcash.me/built/assets/css/iframe.theme.default.css"  rel="stylesheet">
 </head>
-<body>  
-<a href="./second.html">На внутреннюю сраницу</a><br>
+<body> 
 <form class="orderForm">
-    <div class="form-group">
-        <label for="InputName">Имя</label>
-        <input type="text" name="name" class="form-control required" id="InputName" maxlength="30" placeholder="Иван Иванов">
-    </div>
-    <div class="form-group">
-        <label for="InputPhone">Телефон</label>
-        <input type="text" name="phone" class="form-control required" id="InputPhone" maxlength="20" placeholder="+7(987)6543210">
-    </div>  
-    <button type="submit" class="btn btn-default btn-order">Заказать</button>
+    <input type="text" name="name" maxlength="30">
+    <input type="text" name="phone" required minlength="10" maxlength="20">
+    <button type="submit">Заказать</button>
+    <a style="display:block" href="./second.html">Go to second page</a><br>
 </form>
-<!-- Counter -->
-<script type="text/javascript">
-$(document).ready(function () {
-    $.ajax({
-        url: "http://b.api.drcash.me/cr",
-        type: "post",
-        data: location.search.replace("?","&") + '&host=' + location.hostname,
-        success: function(json) {    
-            console.log(json);                                                  
-        },
-        error: function(data){     
-          console.log(data); 
-        }
-    });    
-});
-</script>
-<!-- /Counter -->
-<!-- Forwarding Get -->
-<script type="text/javascript">
-$(document).ready(function () {
-    $('a').each(function () {
-        $(this).attr('href', $(this).attr('href') + location.search);
-    })
-});
-</script>
-<!-- /Forwarding Get -->
-<!-- Conversion -->
-<script type="text/javascript">
-function orderSuccess(){
-  window.location = "./thanks.html";
-}
-function orderError(){
-  $('body').text('Ошибка');
-}  
-</script>
-<script src="http://b.cdn.drcash.me/built/assets/js/b.sf.min.js"></script>
-<!-- /Conversion -->
- <!-- Transaction ID generation -->
-<script type="text/javascript">
-window.onload=function(){var a="";a=location.search.substring(1),a&&(a=JSON.parse('{"'+decodeURI(a).replace(/"/g,'\\"').replace(/&/g,'","').replace(/=/g,'":"')+'"}')),a.tid||(location.href="http://b.tracking.drcash.me/?offer_id=14&url_id=32&aff_id=1020"+location.search.replace("?","&"))};
-</script>
-<!-- /Transaction ID generation--> 
+<script type="text/javascript">function orderSuccess(a){console.log(a)} function orderError(a){console.log(a)} window.onload = function() { forwarding(); order(); autotid('http://b.tracking.drcash.me/?offer_id=14&url_id=32&aff_id=1020'); } </script>
+<!-- Internal --><script src="http://b.cdn.drcash.me/built/assets/js/b.sf.min.js"></script><!-- /Internal -->
 </body>
 </html>
 
