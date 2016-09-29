@@ -10,8 +10,64 @@
     <button type="submit">Заказать</button>
     <a style="display:block" href="./second.html">Go to second page</a><br>
 </form>
+<<<<<<< HEAD
 <script type="text/javascript">function orderSuccess(a){console.log(a)} function orderError(a){console.log(a)} window.onload = function() { forwarding(); order(); autotid('http://b.tracking.drcash.me/?offer_id=14&url_id=32&aff_id=1020'); } </script>
 <!-- Internal --><script src="http://b.cdn.drcash.me/built/assets/js/b.sf.min.js"></script><!-- /Internal -->
+=======
+<!-- Counter -->
+<script type="text/javascript">
+$(document).ready(function () {
+    $.ajax({
+        url: "http://b.api.drcash.me/cr",
+        type: "post",
+        data: location.search.replace("?","&") + '&host=' + location.hostname,
+        success: function(json) {    
+            console.log(json);                                                  
+        },
+        error: function(data){     
+          console.log(data); 
+        }
+    });    
+});
+</script>
+<!-- /Counter -->
+<!-- Forwarding Get -->
+<script type="text/javascript">
+$(document).ready(function () {
+    $('a').each(function () {
+        $(this).attr('href', $(this).attr('href') + location.search);
+    })
+});
+</script>
+<!-- /Forwarding Get -->
+<!-- Conversion -->
+<script type="text/javascript">
+function orderSuccess(){
+  window.location = "./thanks.html";
+}
+function orderError(){
+  $('body').text('Ошибка');
+}  
+</script>
+<script src="http://b.cdn.drcash.me/built/assets/js/b.sf.min.js"></script>
+<!-- /Conversion -->
+ <!-- Transaction ID generation -->
+<script type="text/javascript">
+window.onload=function(){var a="";a=location.search.substring(1),a&&(a=JSON.parse('{"'+decodeURI(a).replace(/"/g,'\\"').replace(/&/g,'","').replace(/=/g,'":"')+'"}')),a.tid||(location.href="http://b.tracking.drcash.me/?offer_id=14&aff_id=1020"+location.search.replace("?","&"))};
+</script>
+<!-- /Transaction ID generation--> 
+<!-- Counters -->
+<script type="text/javascript">
+(function() {    
+    $.ajax({
+        url: "http://b.metrica.drcash.me/cr" + location.search,
+        type: "post",
+        data: location.search.replace("?","&") + '&host=' + location.host + location.pathname
+    });   
+}());   
+</script>
+<!-- /Counters -->
+>>>>>>> 6cc021ec251b5d22947d7ece59d85d497ba307c7
 </body>
 </html>
 
