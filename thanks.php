@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 </head>
 <body>  
-Спасибо!
-Ваш заказ №: <span id="cid"></span><br>
-Указанный телефон: <span id="phone"></span><br><br>
-<i>Если данные указаны не верно, вы можете <a href="./">сделать заказ повторно</a></i><br>
+Thanks!
+Order ID №: <span id="cid"></span><br>
+You phone: <span id="phone"></span><br><br>
+<i>If the data is not shown correctly, you can <a href="./">to order again</a></i><br>
 </body>
 <!-- DrCash -->
 <script type="text/javascript">window.onload = function() {document.getElementById('phone').innerHTML = getpURL('phone');document.getElementById('cid').innerHTML = getpURL('cid');}</script>
